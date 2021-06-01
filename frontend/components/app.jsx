@@ -9,22 +9,21 @@ import {
 } from 'react-router-dom';
 
 import GreetingContainer from './greeting/greeting_container';
+import Modal from "./modal/modal";
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
-    <header>
+  <div className='App'>
+    <header className='head'>
       <Link to="/" className="header-link">
         <h1>Shopsy</h1>
       </Link>
       <GreetingContainer />
+      <Modal />
     </header>
-    <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    </Switch>
+  
   </div>
 );
 
