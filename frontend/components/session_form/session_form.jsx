@@ -40,12 +40,12 @@ class SessionForm extends React.Component {
       <div>
         <div className="signup-form">
           <h3 className="header-form">{this.props.formType}</h3>
-          <input
+          {/* <input
               className="login-submit"
               // onClick={() => this.props.openModal("Sign In")}
               type="submit"
               value={"login"}
-          />
+          /> */}
         </div>
         <form className="session-form" onSubmit={this.handleSubmit}>
           {this.renderErrors()}
@@ -99,12 +99,12 @@ class SessionForm extends React.Component {
         
         <div className="signup-form">
           <h3 className="header-form">{this.props.formType}</h3>
-          <input
+          {/* <input
             className="signup-submit"
             // onClick={() => this.props.openModal("signup")}
             type="submit"
             value={"signup"}
-          />
+          /> */}
       </div>
       <form className="session-form" onSubmit={this.handleSubmit}>
           {this.renderErrors()}
