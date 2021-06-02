@@ -96,6 +96,7 @@ class SessionForm extends React.Component {
   login() {
     return (
       <div>
+        
         <div className="signup-form">
           <h3 className="header-form">{this.props.formType}</h3>
           <input
