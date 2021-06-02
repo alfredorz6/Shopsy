@@ -4,5 +4,5 @@ import ReactDOM from 'react-dom';
 document.addEventListener('DOMContentLoaded', () => {
     
     const root = document.getElementById('root');
-    ReactDOM.render(root);
-  });
+    ReactDOM.render(<h1>WE ARE LIVE SHOPSY!!!!</h1>root);
+});
