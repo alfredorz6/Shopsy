@@ -11,7 +11,7 @@ const NaviBar = ({logout, currentUser}) => {
             <div className="nav">
                 <div>
                     <Link to="/">
-                        <header className="title" >Shopsy!</header>
+                        <header className="title" onClick={() => this.title()}>Shopsy!</header>
                     </Link>
                 </div >
                 <div className="search">
