@@ -46,9 +46,13 @@ class SessionForm extends React.Component {
     return( 
       <div>
         <div className="signup-header">
-          <h3 className="signup-title">Sign up Now!</h3>
-          {this.props.otherForm}          
+        <h3 className="signup-title">Welcome to Shopsy </h3>
+          <br/>
+          <h3 className='signup-button'> Create Account! {this.props.otherForm}</h3>                 
         </div>
+        <br/>
+        <br/>
+        <br/>
         <form className="session-form" onSubmit={this.handleSubmit}>
           {this.renderErrors()}
           <div className="session-div">
@@ -63,7 +67,7 @@ class SessionForm extends React.Component {
           </div>
           <br />
           <div className="session-div">
-            <label className="label-input">Email</label>
+            <label className="label-input">Email address</label>
             <br/>
             <input 
                 className="form-input"
@@ -84,11 +88,14 @@ class SessionForm extends React.Component {
             />
           </div>
           <br />
-          <input 
-              className="signup-button"
+          <div className='signup-submit'>
+            <input 
+              className="sign-up-button"
               type="submit" 
-              value={this.props.formType} 
-          />
+              value='Sign Up'
+            />
+          </div>
+          
         </form>
       </div>
     )
@@ -100,9 +107,9 @@ class SessionForm extends React.Component {
       <div>
         
         <div className="signup-header">
-          <h3 className="signup-title">Welcome to Shopsy </h3>
+          <h3 className="signup-title">Welcome to Shopsy! </h3>
           <br/>
-          <h3 className='signup-button'> please Log in!         {this.props.otherForm}</h3>
+          <h3 className='signup-button'> Please Log in!         {this.props.otherForm}</h3>
           
         </div>
         <br/>

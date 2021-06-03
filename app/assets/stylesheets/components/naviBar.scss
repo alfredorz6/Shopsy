@@ -20,7 +20,7 @@ button {
 
 .signup-form > h3 {
     font-size: 20px;
-    font-weight: 300px;
+    font-weight: 400px;
 }
 
 .session-form {
@@ -68,6 +68,12 @@ button {
     color: goldenrod;
     font-size: 28px;
     font-weight: 600;
+    text-decoration: none;
+    
+}
+
+.title:link {
+    text-decoration: none;
 }
 
 .header-group {
@@ -104,4 +110,19 @@ button {
     width: 80px;
     height: 25px;
     font-weight: 400;
+}
+
+.sign-up-button {
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    width: 198px;
+    height: 35px;
+    font-size: 18px;
+}
+
+.signup-submit {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
