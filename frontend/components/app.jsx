@@ -14,9 +14,7 @@ const App = () => (
       <NavBarContainer />
       <GreetingContainer />
     </header>
-    <main className='body'>
-
-    </main>
+    
     
   </div>
 );
