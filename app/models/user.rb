@@ -6,6 +6,11 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6}, allow_nil:true
     after_initialize :ensure_session_token
 
+    has_one :store,
+        primary_key: :id,
+        foreign_key: :owner_id,
+        class_name: :Store;
+
     attr_reader :password
 
 
