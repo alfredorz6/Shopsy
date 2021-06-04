@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+# PostgreSQL. Versions 9.1 and up are supported.
+=======
 # PostgreSQL. Versions 8.2 and up are supported.
+>>>>>>> main
 #
 # Install the pg driver:
 #   gem install pg
@@ -14,6 +18,23 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+<<<<<<< HEAD
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: shopsy_development
+
+  # The specified database role being used to connect to postgres.
+  # To create additional roles in postgres see `$ createuser --help`.
+  # When left blank, postgres will use the default role. This is
+  # the same name as the operating system user
+=======
 development:
   adapter: postgresql
   encoding: unicode
@@ -52,3 +73,4 @@ test:
   username: brenden
   password:
   timeout: 5000
+>>>>>>> main

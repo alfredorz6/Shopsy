@@ -1,0 +1,128 @@
+.login-demo {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border-radius: 12px;
+    background-color: whitesmoke;
+}
+
+.login-submit {
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    width: 198px;
+    height: 35px;
+    font-size: 18px;
+}
+
+.signup-form > h3 {
+    font-size: 20px;
+    font-weight: 400px;
+}
+
+.session-form {
+    justify-content: center;
+}
+.signup-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.signup-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label-input {
+    font-weight: 600;
+}
+
+.form-input {
+    border-radius: 12px;
+    width: 220px;
+    background: rgb(240, 239, 239);
+}
+
+.nav {
+    padding: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 2px solid lightgray;
+    background-color: whitesmoke;
+}
+
+.search {
+    border: 2px solid black;
+    border-radius: 12px;
+    width: 1000px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.title {
+    color: goldenrod;
+    font-size: 28px;
+    font-weight: 600;
+    text-decoration: none;
+    
+}
+
+.title:link {
+    text-decoration: none;
+}
+
+.header-group {
+    padding: 0px 120px 0px 120px;
+}
+
+.header-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.demo-button{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.demo-submit {
+    border-radius: 12px;
+    background-color: lightgray;
+    width: 198px;
+    height: 35px;
+    font-size: 18px;
+}
+
+.nav-button-login {
+    width: 60px;
+    height: 25px;
+    font-weight: 400;
+    
+}
+
+.nav-button-logout {
+    width: 80px;
+    height: 25px;
+    font-weight: 400;
+}
+
+.sign-up-button {
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    width: 198px;
+    height: 35px;
+    font-size: 18px;
+}
+
+.signup-submit {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
