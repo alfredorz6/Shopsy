@@ -10,7 +10,7 @@ const mstp = state => {
     return {
         store: { 
             name: '',
-            owner_id: ownerId,
+            owner: {id: ownerId},
             description: ''
         },
         errors: state.errors.stores,

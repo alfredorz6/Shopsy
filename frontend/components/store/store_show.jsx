@@ -1,24 +1,28 @@
 import React from 'react';
 
-
-
-
 class StoreShow extends React.Component {
     
     componentDidMount() {
-        this.props.fetchStore(this.props.match.params.storeId);
+        this.props.fetchStore(this.props.storeId);
     }
 
     render() {
-        debugger
         const { store } = this.props;
+        let component;
+        
+        if (store) {
+            component = <div>
+                <h1>{store.name}</h1>
+                <h3>{store.owner.name}</h3>
+                <p>{store.description}</p>
+            </div>
+        } else {
+            <p> loading... </p>
+        }
 
         return (
             <div>
-                <h1>{store.name}</h1>
-                <h3>{store.owner.id}</h3>
-                <p>{store.description}</p>
-                
+                {component}
             </div>
         );
     }

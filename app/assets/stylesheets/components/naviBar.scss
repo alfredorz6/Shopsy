@@ -131,3 +131,24 @@ button {
     display: flex;
     justify-content: space-between;
 }
+
+.menu {
+    width: 80px;
+    border-top: 2px solid gray;
+    border-right: 2px solid gray;
+    border-left: 2px solid gray;
+    border-radius: 12px;
+    background: white;
+}
+
+.session-menu{
+    align-items: center;
+    display: block;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.session-menu > button {
+    border-radius: 12px;
+    width: 78px;    
+}

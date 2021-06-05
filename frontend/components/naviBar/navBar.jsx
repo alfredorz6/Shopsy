@@ -1,60 +1,116 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import StoreShow from '../store/store_show';
 
 
-const NaviBar = ({ currentUser, openModal, logout }) => { 
-            
-    const title = () => {
-        $('html,body').scrollTop(0)
+
+class NaviBar extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            showMenu: false,
+        }
+
+
+        this.title = this.title.bind(this);
+        this.showMenu = this.showMenu.bind(this);
+        this.closeMenu = this.closeMenu.bind(this);
+        // this.redirectToTarget = this.redirectToTarget.bind(this);
     }
-    if (!currentUser) {
-        return (
-            <div>
-            <div className="nav">
+
+    // redirectToTarget(event){
+    //     event.preventDefault();
+    //     let { storeId } = this.props;
+    //     const shopManagerLink = storeId ? `/stores/${storeId}` : "/stores/new";
+    //     this.props.history.push(shopManagerLink);
+    // }
+     
+
+    showMenu(e) {
+        e.preventDefault()       
+        return this.setState({ showMenu: true }, () => {
+          document.addEventListener('click', this.closeMenu);
+        });
+    }
+
+    closeMenu(event) {
+       
+        if (!this.dropdownMenu.contains(event.target)) {
+        
+            this.setState({ showMenu: false }, () => {
+            document.removeEventListener('click', this.closeMenu);
+            });  
+            
+        }
+    }
+  
+            
+    title() {
+        return $('html,body').scrollTop(0)
+    }
+
+
+    render() {
+        let {currentUser, openModal, logout} = this.props
+        if (!currentUser) {
+            return (
                 <div>
-                    <Link to="/">
-                        <header className="title" onClick={title()}>Shopsy!</header>
-                    </Link>                             
-                </div >
-                <div className="search">
-                        Search bar soon
-                </div>
-                <div className="modal">
-                    <button onClick={() => openModal('login')} className='nav-button-login'>Login</button>
-                    
-                </div>
-
-               
-            </div>
-        </div>
-        )
-    } else {
-        return(
-             
-
-            <div>
                 <div className="nav">
                     <div>
                         <Link to="/">
-                            <header className="title" onClick={title()}>Shopsy!</header>
-                        </Link>
+                            <header className="title" onClick={() => this.title()}>Shopsy!</header>
+                        </Link>                             
                     </div >
                     <div className="search">
-                        Search bar soon
+                            Search bar soon
                     </div>
-                    <div className="end-session">
-                        <button className="nav-button-logout" onClick={logout}>Log Out</button>
+                    <div className="modal">
+                        <button onClick={() => openModal('login')} className='nav-button-login'>Login</button>
                     </div>
-    
-                   
+
+                
                 </div>
             </div>
-        )
+            )
+        } else {
+            return(
+                
+
+                <div>
+                    <div className="nav">
+                        <div>
+                            <Link to="/">
+                                <header className="title" onClick={() => this.title()}>Shopsy!</header>
+                            </Link>
+                        </div >
+                        <div className="search">
+                            Search bar soon
+                        </div>
+                        <div className="menu" >
+                            <button onClick={this.showMenu}>Show Menu</button>
+                            {
+                                this.state.showMenu ? (
+                            
+                                    <div className="session-menu" ref={(element) => {this.dropdownMenu = element}}>
+                                        <button className="nav-button-logout" onClick={logout}>Log Out</button>
+                                        <button > My store</button> 
+                                        
+                                    </div>
+                                ) :
+                                ( null
+                                )
+
+                            }
+                        </div>
+                    
+                    </div>
+                </div>
+            )
+        }
     }
-    
 
     
 }
 
 export default NaviBar;
-

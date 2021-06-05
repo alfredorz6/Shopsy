@@ -17,9 +17,12 @@ const App = () => (
       <NavBarContainer />
       <GreetingContainer />
     </header>
-    {/* <CreateStoreContainer />
-    <Route path="/stores/:storeId/edit" component={EditStoreFormContainer} />
-    <Route path='/stores/:storeId' component={StoreShowContainer} />   */}
+    <Switch>
+      <Route exact path="/stores/new" component={CreateStoreContainer} />
+      <Route path="/stores/:storeId/edit" component={EditStoreFormContainer} />
+      <Route path='/stores/:storeId' component={StoreShowContainer} />
+      
+    </Switch>
     
   </div>
 );
