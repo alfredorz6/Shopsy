@@ -6,10 +6,12 @@ import {currentUserHasStore} from '../../selectors/selectors'
 
 
 const mstp = state => {
+    
     return {
+
         currentUser: state.entities.users[state.session.id],
 
-        // storeId: currentUserHasStore(state.session.id, state.entities.users),
+        // storeId: state.entities.stores[state.currentUser.store.id],
 
         users: state.entities.users
 

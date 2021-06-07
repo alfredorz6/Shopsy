@@ -5,6 +5,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 import {createStore, fetchStores} from './actions/store_actions'
 import * as API from './util/store_api_util'
+
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class StoreShow extends React.Component {
     
@@ -15,6 +16,7 @@ class StoreShow extends React.Component {
                 <h1>{store.name}</h1>
                 <h3>{store.owner.name}</h3>
                 <p>{store.description}</p>
+                <Link to={`/stores/${store.id}/edit`} >Edit Store</Link>
             </div>
         } else {
             <p> loading... </p>
@@ -23,6 +25,7 @@ class StoreShow extends React.Component {
         return (
             <div>
                 {component}
+                
             </div>
         );
     }

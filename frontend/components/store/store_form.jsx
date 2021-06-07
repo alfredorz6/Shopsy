@@ -19,6 +19,7 @@ class StoreForm extends React.Component {
     }
 
     render() {
+        let {errors} = this.props
         let comp;
         if (this.props.formType === 'Update Store' ) {
             comp = ( <div>
@@ -35,6 +36,7 @@ class StoreForm extends React.Component {
         return (
             <div>
                 {comp}
+                
                 <form onSubmit={this.handleSubmit}>
                     
                     <label className='store-values'>

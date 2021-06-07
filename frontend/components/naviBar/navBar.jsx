@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+
 import StoreShow from '../store/store_show';
 
 
@@ -16,15 +16,16 @@ class NaviBar extends React.Component {
         this.title = this.title.bind(this);
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
-        // this.redirectToTarget = this.redirectToTarget.bind(this);
+        this.redirectToTarget = this.redirectToTarget.bind(this);
     }
 
-    // redirectToTarget(event){
-    //     event.preventDefault();
-    //     let { storeId } = this.props;
-    //     const shopManagerLink = storeId ? `/stores/${storeId}` : "/stores/new";
-    //     this.props.history.push(shopManagerLink);
-    // }
+    redirectToTarget(event){
+        event.preventDefault();
+        let storeId = this.props.currentUser.store.id;
+        const shopManagerLink = storeId ? `/stores/${storeId}` : "/stores/new";
+        this.props.history.push(shopManagerLink);
+        
+    }
      
 
     showMenu(e) {
@@ -52,6 +53,7 @@ class NaviBar extends React.Component {
 
 
     render() {
+        
         let {currentUser, openModal, logout} = this.props
         if (!currentUser) {
             return (
@@ -94,7 +96,7 @@ class NaviBar extends React.Component {
                             
                                     <div className="session-menu" ref={(element) => {this.dropdownMenu = element}}>
                                         <button className="nav-button-logout" onClick={logout}>Log Out</button>
-                                        <button > My store</button> 
+                                        <button onClick={this.redirectToTarget}> My store</button> 
                                         
                                     </div>
                                 ) :
@@ -113,4 +115,4 @@ class NaviBar extends React.Component {
     
 }
 
-export default NaviBar;
+export default withRouter(NaviBar);

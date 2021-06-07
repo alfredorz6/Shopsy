@@ -8,7 +8,7 @@ import Modal from './modal/modal';
 import CreateStoreContainer from './store/create_store_container'
 import StoreShowContainer from './store/store_show_container';
 import EditStoreFormContainer from './store/edit_store_container';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute, NotAuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
@@ -18,8 +18,8 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
-      <Route exact path="/stores/new" component={CreateStoreContainer} />
-      <Route path="/stores/:storeId/edit" component={EditStoreFormContainer} />
+      <ProtectedRoute exact path="/stores/new" component={CreateStoreContainer} />
+      <ProtectedRoute path="/stores/:storeId/edit" component={EditStoreFormContainer} />
       <Route path='/stores/:storeId' component={StoreShowContainer} />
       
     </Switch>
