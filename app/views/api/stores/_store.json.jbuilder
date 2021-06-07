@@ -1,1 +1,1 @@
-json.extract! store, :id, :name, :owner, :description
+json.extract! store, :id, :name, :owner, :description, :products

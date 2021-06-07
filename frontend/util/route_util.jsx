@@ -22,7 +22,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
   )} />
 );
 
-// const NotAuth = ({ component: Component, path, loggedIn, exact }) => (
+// const NotAuth = ({ component: Component, path, loggedIn, exact, hasStore }) => (
 //   <Route path={path} exact={exact} render={(props) => (
 //      loggedIn && hasStore ? (
 //       <Component {...props} />
@@ -32,10 +32,11 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
 //   )} />
 // );
 
-const mapStateToProps = state => (
-  {loggedIn: Boolean(state.session.id),
-  hasStore: Boolean(state.session.currentUser.store)}
-);
+const mapStateToProps = state => {
+  return { 
+    loggedIn: Boolean(state.session.id),
+    }
+  };
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 
