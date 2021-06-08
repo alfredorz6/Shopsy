@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {fetchStore} from '../../actions/store_actions'
 import {fetchAllUsers} from '../../actions/user_actions'
 
+
 const mstp = (state, ownProps) => {
     
     const currentUser = state.session.currentUser;

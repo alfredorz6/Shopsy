@@ -14,7 +14,7 @@ export const fetchProduct = (productId) => (
 
 export const createProduct = product => (
     $.ajax({
-        url: 'api/products',
+        url: `api/stores/${product.storeId}/products`,
         method: 'POST',
         data: {product: product}
     })

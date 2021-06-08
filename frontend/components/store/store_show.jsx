@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
+import CreateProductContainer from '../products/create_product_container'
+
 class StoreShow extends React.Component {
     
     componentDidMount() {
@@ -12,12 +14,13 @@ class StoreShow extends React.Component {
         let component;
         
         if (store) {
-            component = <div>
+            component = (<div>
                 <h1>{store.name}</h1>
                 <h3>{store.owner.name}</h3>
                 <p>{store.description}</p>
                 <Link to={`/stores/${store.id}/edit`} >Edit Store</Link>
-            </div>
+                <CreateProductContainer/>
+            </div>)
         } else {
             <p> loading... </p>
         }
