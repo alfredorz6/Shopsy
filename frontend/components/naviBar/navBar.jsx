@@ -22,7 +22,7 @@ class NaviBar extends React.Component {
     redirectToTarget(event){
         event.preventDefault();
         let storeId = this.props.currentUser.storeId;
-        const shopManagerLink = store ? `/stores/${storeId}` : "/stores/new";
+        const shopManagerLink = storeId ? `/stores/${storeId}` : "/stores/new";
         this.props.history.push(shopManagerLink);
         
     }
