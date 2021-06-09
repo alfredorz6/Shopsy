@@ -7,7 +7,7 @@ class Api::StoresController < ApplicationController
         if @store.save
             render 'api/stores/show'
         else
-            render json: ['You can only create One shop'], status: 422
+            render json: ['You can only create One Store'], status: 422
         end
     end
 

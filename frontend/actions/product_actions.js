@@ -35,8 +35,8 @@ export const fetchProducts = () => dispatch => (
     ApiUtil.fetchAllProducts().then(products => dispatch(receiveProducts(products)))
 )
 
-export const fetchProduct = (product) => dispatch => (
-    ApiUtil.fetchProduct(product).then(product => dispatch(receiveProduct(product)) )
+export const fetchProduct = (productId) => dispatch => (
+    ApiUtil.fetchProduct(productId).then(product => dispatch(receiveProduct(product)) )
 );
 
 export const createProduct = (product) => dispatch => (

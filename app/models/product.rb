@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
     validates :name, :description, :price, presence: true
-    validates :store_id, uniqueness: true, presence: true
+    validates :store_id, presence: true
 
     belongs_to :store,
         primary_key: :id,

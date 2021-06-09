@@ -1,3 +1,5 @@
-json.extract! store, :id, :name, :owner, :description, :products
-json.ownerId store.owner_id
-json.productId store.product.id
+json.extract! store, :id, :name, :description, :products
+json.ownerId store.owner.id
+json.ownerName store.owner.name
+
+

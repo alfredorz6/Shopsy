@@ -13,6 +13,7 @@ class ProductForm extends React.Component {
         
     }
 
+    
     handleSubmit(e){
         e.preventDefault();
         this.props.action(this.state)
@@ -30,37 +31,41 @@ class ProductForm extends React.Component {
         } else {
             errorsComp = listErrors(errors)
         }
-
+        
        
         return (
-            <div>
-                <h2>{this.props.newItem ? "Create New Product" : "Edit Product"}</h2>
+            <div className='product-forms'>
+                <h2 className='product-form-name'>{this.props.newItem ? "Add new item for sale." : "Edit Product"}</h2>
                 <form onSubmit={this.handleSubmit} className="product-form">
 
                     {errorsComp}
 
                     
                     <div className="listing-details">
+                        <br/>
                         <h3>Listing details</h3>
                         <br/>
 
                         <div className="name">
                             <div className="label-description">
-                                <label htmlFor="name">name *</label>
+                                <label htmlFor="name">Title *</label>
                             </div>
                             
                             <input required type="text" value={this.state.name || ''} id="name" onChange={this.update('name')} />
+                            <p>give a title to your product listing</p>
                         </div>
+                        <br/>
 
                         <div className="description">
                             <div className="label-description">
                                 <label htmlFor="description">Description *</label>
-                                <p>
-                                    product description...
-                                </p>
+                                
                             </div>
                             
                             <textarea required id="description" value={this.state.description || ''} onChange={this.update('description')} cols="30" rows="10"></textarea>
+                            <p>
+                                    describe your product, add function and characteristics to attract the clients
+                            </p>
                         </div>
                                                 
                     </div>
@@ -68,7 +73,7 @@ class ProductForm extends React.Component {
 
                     <div className="inventory-pricing">
                         
-
+                        <br/>
                         <div className="price">
 
                             <div className="label-description">
@@ -81,16 +86,20 @@ class ProductForm extends React.Component {
                                 onChange={this.update('price')} 
                                 min="0.00" 
                                 step="0.01"/>
+                            <p>give a value to your product, keep in mind the costs!</p>
                         </div>
                     </div>
+                    <br/>
+                    <br/>
 
                     
                     <div className="flex-row">
                         <Link to={`/stores/${this.state.store_id}`}
-                            className="clickable button-save-cancel">
+                            className="clickable-button-cancel">
                             Cancel
                         </Link>
-                        <button className="clickable button-save-cancel">Save and continue</button>
+                        <br/>
+                        <button className="clickable-button-save">Save and continue</button>
                     </div>
                     
                 </form>
