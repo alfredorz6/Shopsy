@@ -1,0 +1,87 @@
+.product-forms {
+    background: whitesmoke;
+    border: 1px solid black;
+    border-radius: 12px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 800px;
+    padding: 15px
+}
+
+.product-form-name {
+    font-size: 36px;
+    font-weight: 600;
+
+}
+
+.label-description {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.name > p {
+    font-size: 12px;
+    text-align: justify;
+}
+
+.name > input {
+    border-radius: 12px;
+    
+}
+
+.description > p {
+    font-size: 12px;
+    text-align: justify;
+}
+
+.description > textarea {
+    border-radius: 12px;
+    
+}
+
+.price > p {
+    font-size: 12px;
+    text-align: justify;
+}
+
+.price > input {
+    border-radius: 12px;
+    
+}
+
+.clickable-button-cancel{
+    border-radius: 12px;
+    border: 2px solid black;
+    background: whitesmoke;
+    width: auto;
+    margin: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: none;
+    margin-right: 15px;
+    color: black
+}
+
+.flex-row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.product-pic {
+    width: 125px;
+    height: 125px;
+}
+
+.product-list-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 125px;
+}
+
+.store-product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

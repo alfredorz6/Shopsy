@@ -2,11 +2,18 @@ import { connect } from 'react-redux'
 import NaviBar from './navBar'
 import { logout } from "../../actions/session_actions";
 import { openModal } from '../../actions/modal_actions';
+import {currentUserHasStore} from '../../selectors/selectors'
 
 
 const mstp = state => {
+    
     return {
-        currentUser: state.entities.users[state.session.id]
+
+        currentUser: state.entities.users[state.session.id],
+
+        // storeId: state.entities.stores[state.currentUser.store.id],
+
+        users: state.entities.users
 
     }
 }

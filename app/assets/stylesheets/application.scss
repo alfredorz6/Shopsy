@@ -13,9 +13,12 @@
 
  *= require_self
  */
-@import './base/reset.css';
+@import './base/reset.scss';
 @import './components/modal.scss';
 @import './components/naviBar.scss';
+@import './components/homepage.scss';
+@import './components/store.scss';
+@import './components/product.scss';
 
 html {
     height: 100%;

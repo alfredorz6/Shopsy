@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
     };
     this.demoUser = this.demoUser.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.otherForm = this.otherForm.bind(this)
+    this.renderErrors = this.renderErrors.bind(this)
   }
 
   update(field) {
@@ -18,9 +20,14 @@ class SessionForm extends React.Component {
     });
   }
 
+  otherForm() {
+    this.props.clearErrors()
+    this.props.otherForm()
+  }
+
   demoUser(e) {
     e.preventDefault();
-    const user = {email:'alex@demo.com', name: 'Alex', password: '123456'};
+    const user = {email:'Alex@demo.com', name: 'Alex', password: '123456'};
     this.props.login(user).then(this.props.closeModal)
   }
 
@@ -46,9 +53,11 @@ class SessionForm extends React.Component {
     return( 
       <div>
         <div className="signup-header">
-        <h3 className="signup-title">Welcome to Shopsy </h3>
-          <br/>
-          <h3 className='signup-button'> Create Account! {this.props.otherForm}</h3>                 
+        <h3 className="signup-title">Welcome to Shopsy! </h3>
+        </div>
+        <div className='button-layout'>
+          <h3 className='signup-button'> Create Account! </h3>
+          <button className='test-button' onClick={this.otherForm}>Login</button>                 
         </div>
         <br/>
         <br/>
@@ -108,9 +117,10 @@ class SessionForm extends React.Component {
         
         <div className="signup-header">
           <h3 className="signup-title">Welcome to Shopsy! </h3>
-          <br/>
-          <h3 className='signup-button'> Please Log in!         {this.props.otherForm}</h3>
-          
+        </div>
+        <div className='button-layout'>
+           <h3 className='signup-button'> Please Login </h3>
+          <button className='test-button' onClick={this.otherForm}>Sign Up</button> 
         </div>
         <br/>
         <br/>

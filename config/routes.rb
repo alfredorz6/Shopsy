@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   namespace :api, defaults: {format: :json} do
-    resource :user, only: [:create]
+    resources :users, only: [:create, :index]
     resource :session, only: [:create, :destroy, :show]
+
+    resources :stores, only: [:create, :show, :index, :update] do
+      resources :products, only: [:create]
+    end
+    resources :products, only: [:show, :update, :destroy, :index]
+
   end
 
-=======
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
->>>>>>> main
   root "static_pages#root"
 end
