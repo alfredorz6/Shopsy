@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import Loading from '../loading'
 
 import CreateProductContainer from '../products/create_product_container'
 import ProductIndexItem from '../products/product_index_item';
@@ -39,7 +40,7 @@ class StoreShow extends React.Component {
                 {edit}               
             </div>)
         } else {
-            <p> loading... </p>
+            <Loading />
         }
 
         return (
