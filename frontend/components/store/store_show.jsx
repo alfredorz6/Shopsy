@@ -2,20 +2,23 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 import CreateProductContainer from '../products/create_product_container'
+import ProductIndexItem from '../products/product_index_item';
 
 class StoreShow extends React.Component {
     
     componentDidMount() {
         this.props.fetchStore(this.props.storeId);
+        this.props.fetchProducts(this.props.storeId)
     }
 
     render() {
-        const { store, currentUserId } = this.props;
-        
+           
+        const { store, currentUserId, products } = this.props;
+        let productArr= Object.values(products)
         let component;
         
         
-        if (store) {
+        if (store ) {
             let edit;
             if (store.ownerId === currentUserId) {
                 edit = <div className='store-links'>
@@ -25,12 +28,15 @@ class StoreShow extends React.Component {
             } else {
                 edit = ''
             }
+
             component = (<div className='store'>
                 <div className='store-owner'> <h3>Welcome to {store.ownerName}'s Store</h3></div>
                 <div className='store-title'> <h1>{store.name}</h1> </div>
                 <p className='store-description'>{store.description}</p>
-                {edit}
-                {/* <CreateProductContainer/> */}
+                <div className='store-product'>
+                    {productArr.map( product => <ProductIndexItem product={product} key={product.id}/> )}
+                </div>
+                {edit}               
             </div>)
         } else {
             <p> loading... </p>

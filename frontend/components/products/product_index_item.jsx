@@ -7,9 +7,15 @@ const ProductIndexItem = props => {
             <Link to={`/products/${props.product.id}`}>
                 {props.product.name}
             </Link>
+            <img className="product-pic" src={`${props.product.imageUrl}`} alt='product-image' /> 
             <p className="product-price">${props.product.price}</p>
         </li>
     )
 }
+
+
+
+
+
 
 export default ProductIndexItem;

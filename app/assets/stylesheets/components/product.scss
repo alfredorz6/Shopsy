@@ -66,3 +66,22 @@
     display: flex;
     justify-content: flex-start;
 }
+
+.product-pic {
+    width: 125px;
+    height: 125px;
+}
+
+.product-list-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 125px;
+}
+
+.store-product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

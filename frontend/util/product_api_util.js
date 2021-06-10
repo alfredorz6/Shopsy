@@ -1,14 +1,25 @@
-export const fetchAllProducts = () => (
-    $.ajax({
-        url: 'api/products',
-        method: "GET"
-    })
-)
+export const fetchAllProducts = (storeId) => {
+    
+    if (storeId === undefined) {
+        return $.ajax({
+            url: 'api/products',
+            method: "GET"
+        })
+    } else {
+        return $.ajax({
+            url: 'api/products',
+            method: "GET",
+            data: {storeId: storeId}
+        })
+    }
+    
+    
+}
 
 export const fetchProduct = (productId) => (
     $.ajax({
         url: `api/products/${productId}`,
-        mehtod: 'GET'
+        method: 'GET'
     })
 )
 

@@ -7,5 +7,5 @@ class Product < ApplicationRecord
         foreign_key: :store_id,
         class_name: :Store
 
-    
+    has_one_attached :photo
 end

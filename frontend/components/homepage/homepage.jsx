@@ -18,7 +18,7 @@ class Homepage extends React.Component {
 
     render() {
         const { products, stores } = this.props
-
+        
         return (
             <div className='main-page'> 
                 <h2>A New Day, New Needs!</h2>
@@ -27,7 +27,7 @@ class Homepage extends React.Component {
                 <div className='ribbon'>
                     
                     {stores.map( store => <Link to={`/stores/${store.id}`} key={store.id}>
-                        <button className='image-circle' src='' alt='store-Logo' /> 
+                        <img className='image-circle' src={`${store.imageUrl}`} alt='store-Logo' /> 
                         <br/>
                         <h6 className='store-ribbon'>{store.name}</h6>
                     </Link> )}

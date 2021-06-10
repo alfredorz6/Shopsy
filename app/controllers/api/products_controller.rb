@@ -2,7 +2,14 @@ class Api::ProductsController < ApplicationController
     before_action :require_login, only: [:create, :update]
 
     def index
-        @products = Product.all
+        
+        unless params[:storeId]
+            @products = Product.all
+            
+        else
+            @products = Product.where(store_id: params[:storeId])
+        end
+        
         render :index
     end
 
@@ -22,7 +29,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def update 
-        @product = current_user.store.products.find(params[:id])
+        @product = current_user.store.products.find_by(id: params[:id])
 
                                 
         if @product.update(product_params)
@@ -33,7 +40,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def destroy
-        @product = current_user.store.products.find(params[:id])
+        @product = current_user.store.products.find_by(id: params[:id])
         if @product.destroy
             render :show
         else

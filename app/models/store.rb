@@ -10,6 +10,8 @@ class Store < ApplicationRecord
         primary_key: :id,
         foreign_key: :store_id,
         class_name: :Product
+    
+    has_one_attached :photo
 
 
 end
