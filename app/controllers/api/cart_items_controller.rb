@@ -37,10 +37,10 @@ class Api::CartItemsController < ApplicationController
     def create 
         all_items = CartItem.all.select{ |item| item.user_id == current_user.id }
         @cart_item = CartItem.new(cartitem_params)
-        hash = {};
-        all_items.map { |cart_item| hash[cart_item.product_id] = cart_item.id} 
-        if hash.keys.include?(@cart_item.product_id) 
-            @existing_cart = CartItem.find_by(id: hash[@cart_item.product_id])
+        temp = {};
+        all_items.map { |cart_item| temp[cart_item.product_id] = cart_item.id} 
+        if temp.keys.include?(@cart_item.product_id) 
+            @existing_cart = CartItem.find_by(id: temp[@cart_item.product_id])
             
             if @existing_cart.save && logged_in? 
                 @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
