@@ -41,19 +41,23 @@ class Api::CartItemsController < ApplicationController
         all_items.map { |cart_item| hash[cart_item.product_id] = cart_item.id} 
         if hash.keys.include?(@cart_item.product_id) 
             @existing_cart = CartItem.find_by(id: hash[@cart_item.product_id])
+            
             if @existing_cart.save && logged_in? 
                 @cart_item = CartItem.all.select{ |item| item.user_id == current_user.id }
                 render 'api/cart_items/index'
             else 
                 render json: @cart_item.errors.full_messages, status: 404
             end
+
         else 
+
             if @cart_item.save && logged_in? 
                 @cart_item = CartItem.all.select{ |item| item.user_id == current_user.id }
                 render 'api/cart_items/index'
             else 
                 render json: @cart_item.errors.full_messages, status: 404
             end
+            
         end
     end
 
