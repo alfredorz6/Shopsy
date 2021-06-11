@@ -15,7 +15,7 @@ class StoreShow extends React.Component {
     render() {
            
         const { store, currentUserId, products } = this.props;
-        let productArr= Object.values(products)
+        let productArr= Object.values(products).filter(product => product.storeId === store.id)
         let component;
         
         
