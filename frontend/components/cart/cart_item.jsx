@@ -43,10 +43,11 @@ class CartItems extends React.Component {
     
     render(){
         
-        let {itemsArray} = this.props;
+        let {itemsArray, currentUserId} = this.props;
+        let filteredArray = itemsArray.filter(item => item.userId === currentUserId)
         let itemsLi;
         if (itemsArray.length > 0 ){
-            itemsLi = itemsArray.map((item, idx) => {
+            itemsLi = filteredArray.map((item, idx) => {
 
                 // const storeImageUrl = item.storeImageUrl ? <img className="cart-shop-logo" src={item.storeImageUrl} /> : <div className="cart-shop-logo"></div>
                 
@@ -85,7 +86,7 @@ class CartItems extends React.Component {
         return (
             <div className="cart-items-checkout">
                 <ul className="cart-items-list">
-                    <h2>{itemsArray.length} item(s) in your cart</h2>
+                    <h2>{filteredArray.length} item(s) in your cart</h2>
                     {itemsLi}
                 </ul>
 

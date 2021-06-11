@@ -3,10 +3,11 @@ import { fetchCartItems, updateCartItem, removeCartItem } from "../../actions/ca
 import CartItems from "./cart_item";
 
 const mstp = state => {
-    
+    let currentUserId= state.session.id
     let allItems = state.entities.cartItems
     return {
-    itemsArray: Object.keys(allItems).map(id => allItems[id])
+    itemsArray: Object.keys(allItems).map(id => allItems[id]),
+    currentUserId
 }};
 
 const mdtp = dispatch => ({
