@@ -48,7 +48,7 @@ class CartItems extends React.Component {
         let {itemsArray} = this.props;
         let itemsLi;
         if (itemsArray.length > 0 ){
-            itemsLi = itemsArray.map(item => {
+            itemsLi = itemsArray.map((item, idx) => {
 
                 // const storeImageUrl = item.storeImageUrl ? <img className="cart-shop-logo" src={item.storeImageUrl} /> : <div className="cart-shop-logo"></div>
                 
@@ -57,7 +57,8 @@ class CartItems extends React.Component {
                         
                         <div className="item-info">
                             <div className="item-details">
-                                <img src={item.photoUrl} onClick={this.directToProduct(item.id)} className='cart-thumbnails'/>
+                                <img src={item.photoUrl} onClick={this.directToProduct(item.productId)} className='cart-thumbnails'/>
+                                {console.log(item)}
                                 <div>
                                     
                                     <p onClick={this.directToProduct(item.storeId, item.name)}>{item.name}</p>
