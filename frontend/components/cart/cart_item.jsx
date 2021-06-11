@@ -7,7 +7,7 @@ class CartItems extends React.Component {
     constructor(){
         super();
         this.handleRemoveCartItem = this.handleRemoveCartItem.bind(this);
-        this.handleUpdateCartItem = this.handleUpdateCartItem.bind(this);
+        // this.handleUpdateCartItem = this.handleUpdateCartItem.bind(this);
         this.totalPrice = this.totalPrice.bind(this);
         
     };
@@ -16,8 +16,6 @@ class CartItems extends React.Component {
         this.props.fetchCartItems();
     };
 
-    
-
     handleUpdateCartItem(item){
         return (event) => {this.props.updateCartItem({id: item.id });
         }
@@ -25,7 +23,7 @@ class CartItems extends React.Component {
     };
 
     handleRemoveCartItem(cartItemId){
-        return event => {this.props.removeCartItem(cartItemId);
+        return event => {this.props.removeCartItem(cartItemId)
         }     
     };
 
@@ -58,7 +56,6 @@ class CartItems extends React.Component {
                         <div className="item-info">
                             <div className="item-details">
                                 <img src={item.photoUrl} onClick={this.directToProduct(item.productId)} className='cart-thumbnails'/>
-                                {console.log(item)}
                                 <div>
                                     
                                     <p onClick={this.directToProduct(item.storeId, item.name)}>{item.name}</p>

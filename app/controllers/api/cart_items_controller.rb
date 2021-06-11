@@ -13,8 +13,8 @@ class Api::CartItemsController < ApplicationController
     def update 
         if logged_in?
             @cart_item = CartItem.find_by(id: params[:id])
-                if @cartitem.update(cartitem_params)
-                    @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
+                if @cart_item.update(cartitem_params)
+                    @cart_items = Cartitem.all.select{ |item| item.user_id == current_user.id }
                     render 'api/cart_items/index'
                 end
         else
@@ -26,7 +26,7 @@ class Api::CartItemsController < ApplicationController
         if logged_in? 
             @cart_item = CartItem.find_by(id: params[:id])
             if @cart_item.destroy 
-                @cart_item = CartItem.all.select{ |item| item.user_id == current_user.id }
+                @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
                 render'api/cart_items/index'
             end 
         else
@@ -43,7 +43,7 @@ class Api::CartItemsController < ApplicationController
             @existing_cart = CartItem.find_by(id: hash[@cart_item.product_id])
             
             if @existing_cart.save && logged_in? 
-                @cart_item = CartItem.all.select{ |item| item.user_id == current_user.id }
+                @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
                 render 'api/cart_items/index'
             else 
                 render json: @cart_item.errors.full_messages, status: 404
@@ -52,7 +52,7 @@ class Api::CartItemsController < ApplicationController
         else 
 
             if @cart_item.save && logged_in? 
-                @cart_item = CartItem.all.select{ |item| item.user_id == current_user.id }
+                @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
                 render 'api/cart_items/index'
             else 
                 render json: @cart_item.errors.full_messages, status: 404

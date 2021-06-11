@@ -11,7 +11,7 @@ const CartItemsReducer = (state = {}, action) => {
             return Object.assign(nextstate, action.cartItems);
         case REMOVE_CART_ITEM:
             delete nextstate[action.cartItemId];
-            return newObject;
+            return nextstate;
         case RECEIVE_CART_ITEM:
             nextstate[action.cartItem.id]= action.cartItem;
             return nextstate
