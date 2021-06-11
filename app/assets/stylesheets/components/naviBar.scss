@@ -46,10 +46,17 @@ button {
     background: rgb(240, 239, 239);
 }
 
-.nav {
-    padding: 35px;
+.upper-bar {
+    padding-top: 35px;
+    padding-bottom: 15px;
     display: flex;
     justify-content: space-evenly;
+    
+}
+
+.nav {
+    padding-left: 30px;
+    padding-right: 30px;
     border-bottom: 2px solid lightgray;
     background-color: whitesmoke;
 }
@@ -132,8 +139,8 @@ button {
     justify-content: space-between;
 }
 
-.menu {
-    width: 80px;
+.drop-menu {
+    padding: 0;
     border-top: 2px solid gray;
     border-right: 2px solid gray;
     border-left: 2px solid gray;
@@ -142,13 +149,57 @@ button {
 }
 
 .session-menu{
-    align-items: center;
+    height: 50px;
+    border-radius: 12px;
     display: block;
-    margin-left: 1px;
-    margin-right: 1px;
+    background: white;
+    
 }
 
 .session-menu > button {
     border-radius: 12px;
-    width: 78px;    
+    width: auto;    
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+}
+
+.cart-button {
+    border-radius: 50%;
+    border: 1px solid black;
+    background: white;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    color: black;
+    
+}
+
+.cart-button:hover {
+    cursor: pointer;
+}
+
+.cart-button1 {
+    border-radius: 50%;
+    border: 1px solid black;
+    background: white;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    color: black;
+    
+    
+}
+
+.lower-bar-ul{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 8px;
 }

@@ -11,6 +11,11 @@ class User < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :Store;
 
+    has_many :cartitems,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :CartItem
+
     attr_reader :password
 
 

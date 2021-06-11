@@ -12,7 +12,9 @@ import CreateProductContainer from './products/create_product_container'
 import StoreShowContainer from './store/store_show_container';
 import ProductShowContainer from './products/product_show_container'
 import EditStoreFormContainer from './store/edit_store_container';
+import CartItemContainer from './cart/cart_item_container';
 import { AuthRoute, ProtectedRoute, NotAuthRoute } from '../util/route_util';
+import Footer from './footer/footer'
 
 const App = () => (
   <div>
@@ -26,12 +28,13 @@ const App = () => (
       <Route exact path='/' component={Homepage}/>
       <ProtectedRoute exact path="/stores/new" component={CreateStoreContainer} />
       <ProtectedRoute path="/stores/:storeId/edit" component={EditStoreFormContainer} />
+      <ProtectedRoute exact path='/cart_items' component={CartItemContainer}/>
       <Route exact path='/stores/:storeId' component={StoreShowContainer} />
       <ProtectedRoute exact path="/stores/:storeId/products/new" component={CreateProductContainer} />
       <Route path='/products/:productId' component={ProductShowContainer}/>
       <Route exact path="/products/" component={ProductIndexContainer}/>
     </Switch>
-    
+    <Footer/>
   </div>
 );
 

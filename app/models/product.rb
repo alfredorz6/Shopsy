@@ -5,7 +5,13 @@ class Product < ApplicationRecord
     belongs_to :store,
         primary_key: :id,
         foreign_key: :store_id,
-        class_name: :Store
+        class_name: :Store;
+
+    has_many :cart_item,
+        primary_key: :id,
+        foreign_key: :product_id,
+        class_name: :CartItem
+        
 
     has_one_attached :photo
 end

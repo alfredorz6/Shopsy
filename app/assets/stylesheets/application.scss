@@ -19,6 +19,9 @@
 @import './components/homepage.scss';
 @import './components/store.scss';
 @import './components/product.scss';
+@import './components/cart.scss';
+@import './components/footer.scss';
+
 
 html {
     height: 100%;
@@ -26,5 +29,6 @@ html {
     background: linear-gradient(0deg, rgba(2,0,36,0.717991591167717) 0%, rgba(121,9,9,0.9140700225402661) 0%, rgba(255,0,0,0) 82%);
     background-size:cover;
     background-repeat: no-repeat;
+    font-family: 'Lora', serif;
 
 }

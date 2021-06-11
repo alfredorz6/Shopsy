@@ -1,27 +1,29 @@
 import React from 'react';
 import Loading from '../loading';
 import { withRouter, Link } from 'react-router-dom';
-import NumericInput from 'react-numeric-input';
+import { FaEnvelope } from "react-icons/fa";
 
 
 class ProductShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.product
-        debugger
+        this.state = {
+        product_id: this.props.productId,
+        user_id: this.props.currentUserId}
+        this.addCart = this.addCart.bind(this)
         this.handleEdit = this.handleEdit.bind(this);
         
     }
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId);
-        // this.props.fetchStore(this.props.match.params.storeId);
+        
     };
 
     componentDidUpdate(prevProps) {
         if (this.props.match.params.productId !== prevProps.match.params.productId) {
             this.props.fetchProduct(this.props.match.params.productId);
-            // this.props.fetchStore(this.props.match.params.storeId);
+            
         }
     }
 
@@ -30,53 +32,61 @@ class ProductShow extends React.Component {
         this.props.history.push(`/products/${this.props.product.id}/edit`);
     }
 
+    addCart(e) {
+        
+
+        e.preventDefault();
+        this.props.addToCart(this.state);
+        this.props.history.push('/cart_items');
+    }
+    
+
    
     render() {
         let { product, currentUserId } = this.props;
         if (!product || !currentUserId) {
             return (<Loading />)
         }
-        debugger
-        const addToCartButton = currentUserId === product.ownerId
-            ? ''
-            : <button className="clicky" >Add to cart</button>; //will use a this.addCart
+        
+        const addToCartButton = currentUserId === product.ownerId ? '' : <button onClick={this.addCart} className="clicky" >Add to cart</button>; //will use a this.addCart
         return (
-            <div className="product-show-reviews">
+            <div className="product-show-page">
                 <div className="product-show">              
                     <div className="carousel">
-                        
+                        <img className='sidebar'src={product.imageUrl} />
+                        <img className='show-image'src={product.imageUrl} />
                     </div>
+
 
                     <div className="product-info">
                         <ul>
-                            <li>
+                            <li className='product-store-name'>
                                 <Link to={`/stores/${product.storeId}`}>{product.storeName}</Link>
                             </li>
-                            <li>{product.name}</li>
-                            <li className="price">
-                                <strong>USD {product.price}</strong>
-                            </li>
-                            <li>
-                                <label className="quantity" htmlFor="quantity"></label>
-                                <br />
-                                
-                                <span> in stock!</span>
-                            </li>
+                            <li className='sales'>Number of completed sales: {product.numSales}</li>
+                            <br/>
+                            <li className='show-product-name'>{product.name}</li>
+                            <li className='show-p-details' >{product.description}</li>
+                            <br/>
+                            <div className='price-quantity'>
+                                <li>
+                                    <p>US$ {product.price}</p>
+                                </li>
+                                <li>
+                                    <p> in stock!</p>
+                                </li>
+                            </div>
                             <li>
                                 {addToCartButton}
                             </li>
 
                         </ul>
-                        <div className="product-details">
-                            <label htmlFor="details">Item details</label>
-                            {product.description}
-                        </div>
+                        
                         <div className="owner-info">
                             
                             
-                            <div className="shop-owner-name">{product.storeName}</div>
-                            <div className="shop-owner-email">
-                                <i className="fa fa-envelope-o" aria-hidden="true"></i>
+                            <div className="shop-owner-name">{product.owner} is the Store owner</div>
+                            <div className="shop-owner-email"><FaEnvelope/>
                                 
                             </div>
                         </div>

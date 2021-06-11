@@ -66,10 +66,84 @@
     height: 350px ;
     border-radius: 8px;
     border: 1px solid black;
-    background: gray;
+    background-image: url(https://open-uri.s3.us-west-1.amazonaws.com/banner.jpg) ;
     margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
     
 
 
 
+}
+
+.banner-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-column-1 {
+    margin: 85px auto;
+    margin-top: 45px;
+    width: 350px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.info-column-2 {
+    margin: 85px auto;
+    margin-top: 45px;
+    width: 350px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.info-column-1 > h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.info-column-2 > h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.intro {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.feature-products {
+    text-align: start;
+
+}
+
+.product-image {
+    width: 125px;
+    height: 125px;
+}
+
+.product-feature {
+    font-size: 18px;
+    height: 130px;
+    margin-top: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    padding-bottom: 80px;
+}
+
+.feature-name {
+    font-weight: 600;
+}
+
+.products-header {
+    font-size: 24px;
+    font-weight: 600;
 }
