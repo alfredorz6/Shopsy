@@ -9,6 +9,7 @@ class CartItems extends React.Component {
         this.handleRemoveCartItem = this.handleRemoveCartItem.bind(this);
         // this.handleUpdateCartItem = this.handleUpdateCartItem.bind(this);
         this.totalPrice = this.totalPrice.bind(this);
+        this.render=this.render.bind(this)
         
     };
 
@@ -24,6 +25,8 @@ class CartItems extends React.Component {
 
     handleRemoveCartItem(cartItemId){
         return event => {this.props.removeCartItem(cartItemId)
+            .then(()=> this.props.fetchCartItems())
+            .then(()=> window.location.reload(true))
         }     
     };
 

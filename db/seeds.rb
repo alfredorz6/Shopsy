@@ -48,11 +48,11 @@ product5= Product.create!({id: 5, name: 'Tools Organizer', description: 'Wood sh
 product_file1= open('https://open-uri.s3.us-west-1.amazonaws.com/products/product_1.jpg')
 product1.photo.attach(io: product_file1, filename: 'product_1.jpg')
 
-product_file2= open('https://open-uri.s3.us-west-1.amazonaws.com/products/product_2.jpg')
-product2.photo.attach(io: product_file2, filename: 'product_2.jpg')
+product_file2= open('https://open-uri.s3.us-west-1.amazonaws.com/products/product_3.jpg')
+product2.photo.attach(io: product_file2, filename: 'product_3.jpg')
 
-product_file3= open('https://open-uri.s3.us-west-1.amazonaws.com/products/product_3.jpg')
-product3.photo.attach(io: product_file3, filename: 'product_3.jpg')
+product_file3= open('https://open-uri.s3.us-west-1.amazonaws.com/products/product_2.jpg')
+product3.photo.attach(io: product_file3, filename: 'product_2.jpg')
 
 product_file4= open('https://open-uri.s3.us-west-1.amazonaws.com/products/product_4.jpg')
 product4.photo.attach(io: product_file4, filename: 'product_4.jpg')

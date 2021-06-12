@@ -36,8 +36,10 @@ class ProductShow extends React.Component {
         
 
         e.preventDefault();
-        this.props.addToCart(this.state);
-        this.props.history.push('/cart_items');
+        this.props.addToCart(this.state)
+        // .then(() => this.props.history.push('/cart_items'));
+        return alert("item added to cart")
+    ;
     }
     
 
