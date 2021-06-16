@@ -21,7 +21,6 @@ class SessionForm extends React.Component {
   }
 
   otherForm() {
-    this.props.clearErrors()
     this.props.otherForm()
   }
 
