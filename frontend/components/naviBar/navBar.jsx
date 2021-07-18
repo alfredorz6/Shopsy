@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import StoreShow from '../store/store_show';
 import { FaShoppingCart, FaStore, FaUserAlt } from "react-icons/fa";
+import SearchBar from '../searchBar/search_bar';
 
 
 
@@ -16,6 +17,7 @@ class NaviBar extends React.Component {
         this.title = this.title.bind(this);
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
+        this.redirectToCart = this.redirectToCart.bind(this)
         this.redirectToTarget = this.redirectToTarget.bind(this);
     }
 
@@ -26,7 +28,12 @@ class NaviBar extends React.Component {
         this.props.history.push(shopManagerLink);
         
     }
-     
+
+    redirectToCart(event){
+        event.preventDefault();
+        this.props.history.push('/cart_items')
+    }
+          
 
     showMenu(e) {
         e.preventDefault()       
@@ -65,10 +72,10 @@ class NaviBar extends React.Component {
                             </Link>                             
                         </div >
                         <div className="search">
-                                Search bar soon
+                                <SearchBar/>
                         </div>
                         <div className="modal">
-                            <Link to='/cart_items' className='cart-button'><FaShoppingCart/></Link>
+                        <button className='cart-button1' onClick={this.redirectToCart}><FaShoppingCart/></button>
                             <button onClick={() => openModal('login')} className='nav-button-login'>Login</button>
                         </div>
 
@@ -102,10 +109,10 @@ class NaviBar extends React.Component {
                                 </Link>
                             </div >
                             <div className="search">
-                                Search bar soon
+                                <SearchBar/>
                             </div>
                             <div className="menu" >
-                                <Link to='/cart_items' className='cart-button1'><FaShoppingCart/></Link>
+                                <button className='cart-button1' onClick={this.redirectToCart}><FaShoppingCart/></button>
                                 <br/>
                                 <button className='cart-button' onClick={this.redirectToTarget}><FaStore/></button> 
                                 <br/>

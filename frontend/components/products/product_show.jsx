@@ -2,6 +2,8 @@ import React from 'react';
 import Loading from '../loading';
 import { withRouter, Link } from 'react-router-dom';
 import { FaEnvelope } from "react-icons/fa";
+import ReviewForm from '../reviews/review_form';
+import ReviewsIndex from '../reviews/review_index';
 
 
 class ProductShow extends React.Component {
@@ -12,6 +14,7 @@ class ProductShow extends React.Component {
         user_id: this.props.currentUserId}
         this.addCart = this.addCart.bind(this)
         this.handleEdit = this.handleEdit.bind(this);
+        this.showReviewForm = this.showReviewForm.bind(this)
         
     }
 
@@ -32,6 +35,23 @@ class ProductShow extends React.Component {
         this.props.history.push(`/products/${this.props.product.id}/edit`);
     }
 
+    showReviewForm(event){
+        let { currentUserId } = this.props;
+        if (!currentUserId){
+            alert("Please login or sign up first!");
+            return;
+        };
+
+        const reviewForm = document.getElementById("review-form");
+        if (event.target.innerHTML === "Add review") {
+            event.target.innerHTML = "Close form";
+        } else {
+            event.target.innerHTML = "Add review";
+        }
+
+        reviewForm.classList.toggle("hidden");
+    }
+
     addCart(e) {
         
 
@@ -46,11 +66,11 @@ class ProductShow extends React.Component {
    
     render() {
         let { product, currentUserId } = this.props;
-        if (!product || !currentUserId) {
+        if (!product ) {
             return (<Loading />)
         }
         
-        const addToCartButton = currentUserId === product.ownerId ? '' : <button onClick={this.addCart} className="clicky" >Add to cart</button>; //will use a this.addCart
+        const addToCartButton = currentUserId === product.ownerId || !currentUserId? 'Log In to add to cart' : <button onClick={this.addCart} className="clicky" >Add to cart</button>; //will use a this.addCart
         return (
             <div className="product-show-page">
                 <div className="product-show">              
@@ -88,10 +108,19 @@ class ProductShow extends React.Component {
                             
                             
                             <div className="shop-owner-name">{product.owner} is the Store owner</div>
-                            <div className="shop-owner-email"><FaEnvelope/>
-                                
-                            </div>
+                            <div className="shop-owner-email"><FaEnvelope/></div>
                         </div>
+
+                        <div className="review-section">
+                            <ReviewsIndex productId={this.props.match.params.productId} />
+
+                            <button className="show-review-form-button clicky" onClick={this.showReviewForm}>Add review</button>
+
+                            <div id="review-form" className="hidden">
+                                <ReviewForm productId={this.props.match.params.productId} />
+                        </div>
+
+                    </div>
 
                     </div>
 

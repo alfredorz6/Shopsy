@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProductIndexItem = props => {
     return (
+        
         <li className="product-list-index">
             <Link to={`/products/${props.product.id}`}>
                 {props.product.name}

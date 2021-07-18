@@ -6,9 +6,12 @@ Rails.application.routes.draw do
     resources :stores, only: [:create, :show, :index, :update] do
       resources :products, only: [:create]
     end
-    resources :products, only: [:show, :update, :destroy, :index]
+    resources :products, only: [:show, :update, :destroy, :index] do
+      resources :reviews, only: [:index, :create]
+    end
     resources :cart_items, only: [:index, :create, :update, :destroy]
-
+    resources :search_items, only: [:index]
+    resources :reviews, only: [:update]
   end
 
   root "static_pages#root"

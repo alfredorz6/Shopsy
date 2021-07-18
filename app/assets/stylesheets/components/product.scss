@@ -107,27 +107,26 @@
 
 .carousel {
     padding: 0;
-    height: 750px;
     display: flex;
+    padding-right: 3vw;
 }
 
 .product-show{
     display: flex;
-    margin-left: 240px;
-    margin-right: 290px;
+    margin-right: 19vw;
 }
 
 .product-info {
     margin-left: 50px;
     margin-top: 35px;
     width: 100%;
-    height: 800px;
+    
 }
 
 .product-show-page {
-    border-radius: 12px;
-    border: 2px solid black;
-    background: whitesmoke;
+    width: 85%;
+    margin: 0vh 8vw;
+    margin-bottom: 3vh;
 }
 
 .product-store-name {
@@ -135,6 +134,12 @@
     font-weight: 600;
     color: black;
     text-decoration: none;
+}
+
+.product-store-name > a {
+    font-size: 3vh;
+    text-decoration: none;
+    color: black
 }
 
 .product-info > li {
@@ -148,10 +153,23 @@
     font-weight: 500;
 }
 
+.price-quantity > li > p {
+    font-weight: 700;
+}
+
 .show-product-name{
+    font-weight: 700;
     font-size: 22px;
 }
 
 .show-p-details {
-    font-size: 14px;
+    font-size: 2.0vh;
+}
+
+.review-section {
+    margin: 1vh 0vw;
+}
+
+.hidden {
+    display: none
 }

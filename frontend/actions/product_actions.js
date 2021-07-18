@@ -1,9 +1,10 @@
-import  * as ApiUtil  from '../util/product_api_util';
+import * as ApiUtil  from '../util/product_api_util';
 
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const RECEIVE_PRODUCTS_ERRORS = 'RECEIVE_PRODUCTS_ERRORS';
-export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS'
+export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
+export const RECEIVE_SEARCH_PRODUCTS = "RECEIVE_SEARCH_PRODUCTS";
 
 const receiveProducts = products => {
     return {
@@ -30,6 +31,14 @@ const receiveProductsErrors = errors => ({
     type: RECEIVE_PRODUCTS_ERRORS,
     errors
 });
+
+export const receiveSearchProducts = products => {
+    return {
+      type: RECEIVE_SEARCH_PRODUCTS,
+      products
+    };
+  };
+  
 
 // export const fetchProducts = () => dispatch => (
 //     ApiUtil.fetchAllProducts().then(products => dispatch(receiveProducts(products)))
@@ -63,3 +72,11 @@ export const deleteProduct = productId => dispatch => (
     ApiUtil.deleteProduct(productId).then(() => dispatch(removeProduct(productId)))
     
 );
+
+export const fetchSearchProduct = query => {
+    return dispatch => {
+      return ApiUtil.fetchSearchProduct(query).then(searchProducts => {
+        return dispatch(receiveSearchProducts(searchProducts));
+      });
+    };
+};

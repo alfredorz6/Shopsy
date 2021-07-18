@@ -1,0 +1,23 @@
+.list-box {
+    width: 80%;
+    height: auto;
+    margin: 0vh 7vw;
+    margin-bottom: 1vh;
+    padding-bottom: 5vh;
+}
+
+.items-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.product-list-index{
+    align-items: center;
+}
+
+.product-list-index > a {
+    text-decoration: none;
+    color: black;
+}

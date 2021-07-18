@@ -13,6 +13,7 @@ import StoreShowContainer from './store/store_show_container';
 import ProductShowContainer from './products/product_show_container'
 import EditStoreFormContainer from './store/edit_store_container';
 import CartItemContainer from './cart/cart_item_container';
+import SearchShowContainer from './searchBar/search_show'
 import { AuthRoute, ProtectedRoute, NotAuthRoute } from '../util/route_util';
 import Footer from './footer/footer'
 
@@ -32,7 +33,9 @@ const App = () => (
       <Route exact path='/stores/:storeId' component={StoreShowContainer} />
       <ProtectedRoute exact path="/stores/:storeId/products/new" component={CreateProductContainer} />
       <Route path='/products/:productId' component={ProductShowContainer}/>
-      <Route exact path="/products/" component={ProductIndexContainer}/>
+      <Route exact path="/products" component={ProductIndexContainer}/>
+      <Route path="/search" component={SearchShowContainer}/>
+          
     </Switch>
     <Footer/>
   </div>

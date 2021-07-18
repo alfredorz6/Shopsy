@@ -15,11 +15,11 @@ class StoreShow extends React.Component {
     render() {
            
         const { store, currentUserId, products } = this.props;
-        let productArr= Object.values(products).filter(product => product.storeId === store.id)
+        let productArr= products.filter(product => product.storeId === store.id)
         let component;
         
         
-        if (store ) {
+        if (store && products ) {
             let edit;
             if (store.ownerId === currentUserId) {
                 edit = <div className='store-links'>
@@ -35,7 +35,9 @@ class StoreShow extends React.Component {
                 <div className='store-title'> <h1>{store.name}</h1> </div>
                 <p className='store-description'>{store.description}</p>
                 <div className='store-product'>
+                    
                     {productArr.map( product => <ProductIndexItem product={product} key={product.id}/> )}
+                    
                 </div>
                 {edit}               
             </div>)

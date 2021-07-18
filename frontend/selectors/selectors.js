@@ -9,3 +9,7 @@ export const listErrors = (errors) => {
         <ul>{errorsLi}</ul>
     </div>;
 };
+
+export const selectReviews = allReviews => {
+  return Object.keys(allReviews).map(id => allReviews[id]);
+};

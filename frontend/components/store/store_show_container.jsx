@@ -12,7 +12,7 @@ const mstp = (state, ownProps) => {
     const store = state.entities.stores[storeId];
     const currentUserId = state.session.id
     const users = state.entities.users;
-    const products = state.entities.products
+    const products = Object.values(state.entities.products)
     
     return {
         store,
