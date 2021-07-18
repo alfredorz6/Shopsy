@@ -37,7 +37,7 @@ class Homepage extends React.Component {
                 <div className='feature-products'>
                 <br/>
                     <h5 className="products-header">Featuring products:</h5>
-                    <Featured products={products.slice(13, 18)} />
+                    <Featured products={products} />
                 </div>
                 <h2 className='sub-banner'>We make buying what you need easier everyday... </h2>
                 <div className='banner'>
