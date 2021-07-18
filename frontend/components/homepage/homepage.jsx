@@ -22,7 +22,7 @@ class Homepage extends React.Component {
         
         return (
             <div className='main-page'> 
-                <h2>A New Day, New Needs!</h2>
+                <h2 className='main-greeting'>A New Day, New Needs!</h2>
                 <br/>
                 <h3>Explore our varied stores</h3>
                 <div className='ribbon'>
