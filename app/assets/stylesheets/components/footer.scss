@@ -73,7 +73,8 @@ a .footer-logo {
 }
 
 .footer {
-    bottom: 0px;
-    margin-right: auto;
-    margin-left: auto;
+    position:relative;
+    bottom:0;
+    width:100%;
+    
 }

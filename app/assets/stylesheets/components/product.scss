@@ -68,15 +68,15 @@
 }
 
 .product-pic {
-    width: 125px;
-    height: 125px;
+    width: 9vw;
+    height: 9vw;
 }
 
 .product-list-index {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 125px;
+    
 }
 
 .store-product {
@@ -172,4 +172,13 @@
 
 .hidden {
     display: none
+}
+
+.product-index-name{
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.product-price {
+    font-size: 2vh;
 }
