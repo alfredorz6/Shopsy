@@ -6,6 +6,9 @@ import { FaTrashAlt } from 'react-icons/fa'
 class CartItems extends React.Component {
     constructor(){
         super();
+        this.state = {
+            total: 0
+        }
         this.handleRemoveCartItem = this.handleRemoveCartItem.bind(this);
         // this.handleUpdateCartItem = this.handleUpdateCartItem.bind(this);
         this.totalPrice = this.totalPrice.bind(this);
@@ -31,13 +34,17 @@ class CartItems extends React.Component {
     };
 
     totalPrice(){
+        // debugger
         let price = 0.00;
         this.props.itemsArray.forEach(item => {
             price += (item.price * 1.00)
         });
+        console.log(price)
+        console.log(this.props.itemsArray)
         return price * 1.00;
-
+        
     }
+    
 
     directToProduct(productId){
         return event => {this.props.history.push(`/products/${productId}`)} 

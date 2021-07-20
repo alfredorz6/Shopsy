@@ -1,5 +1,5 @@
 class Api::CartItemsController < ApplicationController 
-    before_action only: [:index, :update, :destroy]
+    before_action only: [:index, :update, :destroy, :show]
 
     def index 
         if logged_in?
@@ -9,6 +9,17 @@ class Api::CartItemsController < ApplicationController
             return nil
         end
     end 
+
+    def show
+        if logged_in?
+            @cart_item = CartItem.find_by(id: params[:id])
+            render 'api/cart_items/show'
+        else
+            return nil
+        end
+    end
+
+
 
     def update 
         if logged_in?
@@ -44,7 +55,7 @@ class Api::CartItemsController < ApplicationController
             
             if @existing_cart.save && logged_in? 
                 @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
-                render 'api/cart_items/index'
+                render 'api/cart_items/show'
             else 
                 render json: @cart_item.errors.full_messages, status: 404
             end
@@ -53,7 +64,7 @@ class Api::CartItemsController < ApplicationController
 
             if @cart_item.save && logged_in? 
                 @cart_items = CartItem.all.select{ |item| item.user_id == current_user.id }
-                render 'api/cart_items/index'
+                render 'api/cart_items/show'
             else 
                 render json: @cart_item.errors.full_messages, status: 404
             end
