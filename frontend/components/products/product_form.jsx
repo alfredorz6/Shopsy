@@ -6,9 +6,6 @@ class ProductForm extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.product
-        // debugger
-
-        
         this.handleSubmit = this.handleSubmit.bind(this);
         
     }

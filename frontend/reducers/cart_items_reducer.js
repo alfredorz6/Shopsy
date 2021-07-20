@@ -13,8 +13,6 @@ const CartItemsReducer = (state = {}, action) => {
             delete nextstate[action.cartItemId];
             return nextstate;
         case RECEIVE_CART_ITEM:
-            let data = Object.values(action.cartItem)
-            debugger
             nextstate[action.cartItem.id]= action.cartItem;
             return nextstate
         default:

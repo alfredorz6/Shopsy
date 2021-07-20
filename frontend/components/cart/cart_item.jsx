@@ -34,16 +34,14 @@ class CartItems extends React.Component {
     };
 
     totalPrice(){
-        // debugger
+        
         let price = 0.00;
         this.props.itemsArray.forEach(item => {
-            price += (item.price * 1.00)
+            price += (item.product.price * 1.00)
         });
-        console.log(price)
-        console.log(this.props.itemsArray)
         return price * 1.00;
         
-    }
+    }   
     
 
     directToProduct(productId){
@@ -66,17 +64,17 @@ class CartItems extends React.Component {
                         
                         <div className="item-info">
                             <div className="item-details">
-                                <img src={item.photoUrl} onClick={this.directToProduct(item.productId)} className='cart-thumbnails'/>
+                                <img src={item.product.photoUrl} onClick={this.directToProduct(item.product.id)} className='cart-thumbnails'/>
                                 <div>
                                     
-                                    <p onClick={this.directToProduct(item.storeId, item.name)}>{item.name}</p>
+                                    <p onClick={this.directToProduct(item.product.storeId, item.product.name)}>{item.product.name}</p>
                                     <button className="clicky" onClick={this.handleRemoveCartItem(item.id)}>Delete<FaTrashAlt/></button>
                                     
                                 </div>
                             </div>
 
                             <div className="price-column">
-                                <p>(US$ {item.price} )</p>
+                                <p>(US$ {item.product.price} )</p>
                             </div>
 
                            
