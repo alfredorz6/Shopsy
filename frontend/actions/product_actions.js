@@ -37,13 +37,8 @@ export const receiveSearchProducts = products => {
       type: RECEIVE_SEARCH_PRODUCTS,
       products
     };
-  };
+};
   
-
-// export const fetchProducts = () => dispatch => (
-//     ApiUtil.fetchAllProducts().then(products => dispatch(receiveProducts(products)))
-// )
-
 export const fetchProducts = (storeId) => dispatch => {
     return ApiUtil.fetchAllProducts(storeId).then(products => dispatch(receiveProducts(products)))
 }

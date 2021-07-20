@@ -69,7 +69,7 @@ class Homepage extends React.Component {
         )
     }
 }
-//{`sourcetobedefined/store${store.id}.jpg`}
+
 
 const mstp = (state) => {
     return {

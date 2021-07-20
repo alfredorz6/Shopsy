@@ -10,7 +10,6 @@ class CartItems extends React.Component {
             total: 0
         }
         this.handleRemoveCartItem = this.handleRemoveCartItem.bind(this);
-        // this.handleUpdateCartItem = this.handleUpdateCartItem.bind(this);
         this.totalPrice = this.totalPrice.bind(this);
         this.render=this.render.bind(this)
         
@@ -20,11 +19,11 @@ class CartItems extends React.Component {
         this.props.fetchCartItems();
     };
 
-    handleUpdateCartItem(item){
-        return (event) => {this.props.updateCartItem({id: item.id });
-        }
+    // handleUpdateCartItem(item){
+    //     return (event) => {this.props.updateCartItem({id: item.id });
+    //     }
 
-    };
+    // };
 
     handleRemoveCartItem(cartItemId){
         return event => {this.props.removeCartItem(cartItemId)
