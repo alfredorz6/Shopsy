@@ -44,7 +44,7 @@ class ProductShow extends React.Component {
 
         const reviewForm = document.getElementById("review-form");
         if (event.target.innerHTML === "Add review") {
-            event.target.innerHTML = "Close form";
+            event.target.innerHTML = "Cancel review";
         } else {
             event.target.innerHTML = "Add review";
         }

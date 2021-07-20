@@ -19,6 +19,7 @@ class NaviBar extends React.Component {
         this.closeMenu = this.closeMenu.bind(this);
         this.redirectToCart = this.redirectToCart.bind(this)
         this.redirectToTarget = this.redirectToTarget.bind(this);
+        
     }
 
     redirectToTarget(event){
@@ -33,7 +34,8 @@ class NaviBar extends React.Component {
         event.preventDefault();
         this.props.history.push('/cart_items')
     }
-          
+
+       
 
     showMenu(e) {
         e.preventDefault()       

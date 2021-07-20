@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import NaviBar from './navBar'
+import NaviBar from '../naviBar/navBar'
 import { logout } from "../../actions/session_actions";
 import { openModal } from '../../actions/modal_actions';
 import {currentUserHasStore} from '../../selectors/selectors'

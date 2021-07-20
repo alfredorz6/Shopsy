@@ -52,7 +52,7 @@ class CartItems extends React.Component {
         if (itemsArray.length > 0 ){
             itemsLi = filteredArray.map((item, idx) => {
 
-                // const storeImageUrl = item.storeImageUrl ? <img className="cart-shop-logo" src={item.storeImageUrl} /> : <div className="cart-shop-logo"></div>
+                
                 
                 return (
                     <li key={shortid.generate()}>
@@ -94,7 +94,7 @@ class CartItems extends React.Component {
                 </ul>
 
                 <ul className="checkout">
-                    <div className="product-total">
+                    <div className="product-total">Total
                         <li className='cart-product-labels'>
                             <p className='checkout-label'>Item total</p>
                             <p>US$ {this.totalPrice()}</p>
