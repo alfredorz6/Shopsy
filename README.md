@@ -25,11 +25,7 @@ Hosted on [Heroku](heroku.com)
 
 ## Future Implementations
 
-* Product reviews.
-
-* Product search.
-
-* Image handler in the store and product forms.
+* Image handler in the product forms.
 
 * Categories and favorites functionality.
 
