@@ -16,7 +16,7 @@ class CartItems extends React.Component {
     };
 
     componentDidMount(){
-        this.props.fetchCartItems();
+        this.props.fetchCartItems(); 
     };
 
     // handleUpdateCartItem(item){
@@ -66,7 +66,7 @@ class CartItems extends React.Component {
                                 <img src={item.product.photoUrl} onClick={this.directToProduct(item.product.id)} className='cart-thumbnails'/>
                                 <div>
                                     
-                                    <p onClick={this.directToProduct(item.product.storeId, item.product.name)}>{item.product.name}</p>
+                                    <p className='item-name' onClick={this.directToProduct(item.product.storeId, item.product.name)}>{item.product.name}</p>
                                     <button className="clicky" onClick={this.handleRemoveCartItem(item.id)}>Delete<FaTrashAlt/></button>
                                     
                                 </div>
@@ -98,16 +98,16 @@ class CartItems extends React.Component {
                 </ul>
 
                 <ul className="checkout">
-                    <div className="product-total">Total
+                    <div className="product-total">
                         <li className='cart-product-labels'>
                             <p className='checkout-label'>Item total</p>
-                            <p>US$ {this.totalPrice()}</p>
+                            <p className='cart-text'>US$ {this.totalPrice()}</p>
                         </li>
                         <li className='cart-product-labels'>
                             <p className='checkout-label'>Shipping</p>
-                            <p>App Academy</p>
-                            <p>825 Battery St</p>
-                            <p>San Francisco, CA 94111,</p>
+                            <p className='cart-text'>App Academy</p>
+                            <p className='cart-text'>825 Battery St</p>
+                            <p className='cart-text'>San Francisco, CA 94111,</p>
                         </li>
                     </div>
                     <br/>

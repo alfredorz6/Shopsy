@@ -32,7 +32,7 @@
 .cart-items-list > h2{
     font-size: 22px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 3vh;
 }
 
 .cart-items-list > li {
@@ -53,7 +53,7 @@
     border-radius: 12px;
     background-color: whitesmoke;
     font-size: 16px;
-    height: 250px;
+    height: 40vh;
 }
 
 .product-total {
@@ -78,4 +78,16 @@
 .checkout-position{
     text-align: center;
     font-size: 22px;
+}
+
+.item-name{
+    padding: 1.2vh;
+}
+
+.checkout > li > p {
+    padding: 1vh;
+}
+
+.cart-text {
+    padding: 0.8vh;
 }
