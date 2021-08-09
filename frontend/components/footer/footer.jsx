@@ -35,7 +35,7 @@ class Footer extends React.Component {
                         <div className="footer-column">
                             <h3 className="footer-header">About</h3>
                             <ul className="footer-list">
-                                <p>Shopsy.</p>
+                                <p>Shopsy</p>
                                 <p>Policies</p>
                                 <p>Investors</p>
                                 <p>Careers</p>

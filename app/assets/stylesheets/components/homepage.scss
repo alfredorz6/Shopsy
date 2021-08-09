@@ -2,8 +2,8 @@
 
     background-color: whitesmoke;
     border-radius: 50%;
-    width: 175px;
-    height: 175px;
+    width: 12vw;
+    height: 12vw;
     border: 3px solid black
 }
 
@@ -27,6 +27,7 @@
     font-weight: 500;
     color: black;
     text-decoration: none!important;
+    padding-top: 1.2vh
 }
 
 .main-greeting{
@@ -74,6 +75,7 @@
 .banner-info {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .info-column-1 {
@@ -89,7 +91,7 @@
 .info-column-2 {
     margin: 0vh 7vw;
     margin-top: 2vh;
-    width: 25vw;
+    width: 27vw;
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 1vw;
@@ -100,17 +102,20 @@
     font-size: 1.8vw;
     font-weight: 600;
     margin-bottom: 5px;
+    padding-bottom: 1.2vh;
 }
 .info-column-2 > h3 {
     font-size: 1.8vw;
     font-weight: 600;
     margin-bottom: 5px;
+    padding-bottom: 1.2vh;
 }
 
 .intro {
     font-size: 2.2vw;
     font-weight: 700;
     margin-top: 1vh;
+    padding-bottom: 1.2vh;
 }
 
 .feature-products {

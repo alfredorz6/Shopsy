@@ -55,7 +55,7 @@ class Homepage extends React.Component {
                             </p>
                         </div>
                         <div className='info-column-2'>
-                            <h3>Support independent creators</h3>
+                            <h3 className='info2-title'>Support independent creators</h3>
                             <p>There’s no Shopsy warehouse – just millions 
                                 of people selling the things they love. 
                                 We make the whole process easy, helping you 
