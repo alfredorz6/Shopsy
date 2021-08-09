@@ -78,12 +78,16 @@ button {
     height: 100%;
 }
 .search-field{
-    width: 96%;
+    width: 94%;
     height: 100%;
     border: none;
     background: whitesmoke;
     border-radius: 12px;
-    padding: 0.1vh
+    padding-left: 0.6vh
+}
+
+.search-field:focus{
+    outline: none;
 }
 
 .search-button {
